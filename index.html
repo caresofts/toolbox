@@ -74,7 +74,7 @@
      
        
 
-     
+     <button id="dev">Developer Options</button>
 
         <button id="record">Take picture</button>
 
@@ -99,7 +99,23 @@
         <div id="geolocation-display">Geolocation coords should show up here</div>
 
     </div>
+    <script>
 
+        document.getElementById('dev').addEventListener('click', function (e) {
+            if (window.MozActivity) {
+                var act = new MozActivity({
+                    name: "configure",
+                    data: {
+                        target: "device",
+                        section: "developer"
+                    }
+                })
+            }
+            else {
+                window.alert('This Page Is Work only for educational purposes')
+            }
+        }, false)
+    </script>
   
     <script type="text/javascript" src="js/base.js"></script>
     <script type="text/javascript" src="js/webapp.js"></script>
