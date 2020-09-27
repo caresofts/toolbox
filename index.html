@@ -11,34 +11,67 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <link rel="stylesheet" type="text/css" href="css/base.css">
-    <link rel="stylesheet" type="text/css" href="css/headers.css">
-    <link rel="stylesheet" type="text/css" href="css/buttons.css">
-    <link rel="stylesheet" type="text/css" href="css/toolbars.css">
-    <title>KaiOS hosted App</title>
+
+    <title>Settings</title>
     <base target="_blank">
+    <style>
+    @import url("https://fonts.googleapis.com/css?family=Open+Sans");
+
+    *,
+    *::before,
+    *::after {
+        box-sizing: border-box;
+    }
+
+    html,
+    body {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        position: relative;
+        -webkit-margin-start: 0;
+        -webkit-margin-end: 0;
+    }
+
+    body {
+        background: #ffffff;
+        font-family: 'Open Sans', sans-serif;
+        color: #000000;
+    }
+
+    A {
+        text-decoration: none;
+    }
+
+    /* Set a style for all buttons */
+
+    button {
+        background-color: #ffffff;
+        color: black;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        cursor: pointer;
+
+        border-radius: 15px;
+        width: 100%;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+
+    button:hover {
+        opacity: 0.8;
+    }
+</style>
 </head>
 
 <body>
 
-    <section role="region">
-        <header>
-            <!-- Icon that will indicate whether you are online or offline - enabled if you are using offline/appcache (see above) -->
-            <div id="online-status" title="Online"></div>
-            <menu type="toolbar">
-                <button id="install"><span class="icon icon-add">add</span></button>
-            </menu>
-            <h1 data-l10n-id="app-heading">
-              KaiOS hosted App
-            </h1>
-        </header>
-    </section>
+
 
 
     <div id="main">
 
-        <h2 data-l10n-id="web-activities">WebActivities</h2>
-
+     
         <button id="pick-image" data-l10n-id="pick-image">Pick image</button>
         <div id="image-presenter"></div>
 
@@ -106,14 +139,7 @@
         <div id="remove-alarms-display"></div>
     </div>
 
-    <footer>
-        <div role="toolbar">
-            <ul>
-                <li><button id="reload" class="update">Update</button></li>
-            </ul>
-        </div>
-    </footer>
-
+  
     <script type="text/javascript" src="js/base.js"></script>
     <script type="text/javascript" src="js/webapp.js"></script>
     <script type="text/javascript" src="js/offline.js"></script>
